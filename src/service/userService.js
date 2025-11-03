@@ -2,6 +2,8 @@ import { createUser, findUser, updateUser } from "../repository/userRepository.j
 import generateOtp from "../utils/generateOtp.js";
 import emailTemplate from "../utils/emailTemplates.js";
 import emailTransporter from "../config/emailConfig.js";
+import config from "../config/serverConfig.js";
+const { EMAIL_USER } = config;
 
 export const registerUser = async (data) => {
   const existing = await findUser({ email: data.email });
@@ -17,7 +19,7 @@ export const registerUser = async (data) => {
   });
 
   await emailTransporter.sendMail({
-    from: `"Auth System" <${process.env.EMAIL_USER}>`,
+    from: `"Auth System" <${EMAIL_USER}>`,
     to: user.email,
     subject: "Verify your Email",
     html: emailTemplate({

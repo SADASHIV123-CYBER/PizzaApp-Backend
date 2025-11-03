@@ -1,4 +1,4 @@
-import User from "../schema/userSchema";
+import User from "../schema/userSchema.js";
 
 export const createUser = async (userDetails) => {
   const user = await User.create(userDetails);

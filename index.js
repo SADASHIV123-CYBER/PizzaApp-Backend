@@ -1,8 +1,11 @@
 import express from "express";
 import connectDB from "./src/config/dbConfig.js";
 import serverConfig from "./src/config/serverConfig.js";
+import router from "./src/routes/v1/userRoutes.js";
 
 const app = express()
+
+app.use(express.json());
 
 app.get('/ping', (req, res) => {
     return res.json({
@@ -10,6 +13,7 @@ app.get('/ping', (req, res) => {
     })
 });
 
+app.use('/api', router)
 
 app.listen(serverConfig.PORT, () => {
     connectDB();
