@@ -63,15 +63,9 @@ const userSchema = new mongoose.Schema({
     },
   },
 
-//   otp: {
-//     type: String,
-//     required: false, 
-//   },
 
-  otpHash: { type: String, select: false },
-  otpExpiresAt: { type: Date },
-  otpSentAt: { type: Date },     // used for resend-rate limiting
-  otpAttempts: { type: Number, default: 0 },
+  otp: { type: String },
+  otpExpires: { type: Date }
 
 }, { timestamps: true });
 
@@ -89,4 +83,6 @@ userSchema.pre("save", async function (next) {
   }
 });
 
-export const User = mongoose.model("User", userSchema);
+ const User = mongoose.model("User", userSchema);
+
+ export default User

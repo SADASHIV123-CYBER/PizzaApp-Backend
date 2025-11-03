@@ -1,46 +1,15 @@
-import { User } from "../schema/userSchema.js";
+import User from "../schema/userSchema";
 
-export const repo = {
-  createUser: async (userData) => {
-    return User.create(userData);
-  },
+export const createUser = async (userDetails) => {
+  const user = await User.create(userDetails);
+  return user || null
+}
 
-  findByEmail: async (email, withHidden = false) => {
-    if (withHidden) return User.findOne({ email }).select("+password +otpHash +otpAttempts");
-    return User.findOne({ email });
-  },
+export const findUser = async (userDetails) => {
+  const user = await User.findOne(userDetails);
+  return user
+}
 
-  findById: async (id) => User.findById(id),
-
-  saveOTP: async (userId, otpHash, expiry) => {
-    return User.findByIdAndUpdate(userId, {
-      otpHash,
-      otpExpiresAt: new Date(expiry),
-      otpSentAt: new Date(),
-      otpAttempts: 0 // reset attempts on new OTP
-    }, { new: true }).select("+otpHash +otpAttempts");
-  },
-
-  clearOTP: async (userId) => {
-    return User.findByIdAndUpdate(userId, {
-      otpHash: undefined,
-      otpExpiresAt: undefined,
-      otpSentAt: undefined,
-      otpAttempts: 0
-    }, { new: true });
-  },
-
-  incrementOtpAttempts: async (userId) => {
-    return User.findByIdAndUpdate(userId, { $inc: { otpAttempts: 1 } }, { new: true }).select("+otpAttempts");
-  },
-
-  verifyUser: async (userId) => {
-    return User.findByIdAndUpdate(userId, {
-      isVerified: true,
-      otpHash: undefined,
-      otpExpiresAt: undefined,
-      otpSentAt: undefined,
-      otpAttempts: 0
-    }, { new: true });
-  }
-};
+export const updateUser = async(id, updateData) => {
+  const user = await User.findByIdAndUpdate(id, updateData, {new: true})
+}
