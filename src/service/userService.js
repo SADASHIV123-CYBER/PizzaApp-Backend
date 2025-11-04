@@ -14,6 +14,7 @@ export const registerUser = async (data) => {
 
   const user = await createUser({
     ...data,
+    isVerified: false,
     otp,
     otpExpires: otpExpiry
   });

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
-const userSchema = new mongoose.Schema({
+const TempUserSchema = new mongoose.Schema({
   fullName: {
     type: String,
     trim: true,
@@ -64,12 +64,12 @@ const userSchema = new mongoose.Schema({
   },
 
 
-  // otp: { type: String },
+  otp: { type: String },
   otpExpires: { type: Date }
 
 }, { timestamps: true });
 
-userSchema.pre("save", async function (next) {
+TempUserSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     return next();
   }
@@ -83,6 +83,6 @@ userSchema.pre("save", async function (next) {
   }
 });
 
- const User = mongoose.model("User", userSchema);
+ const TempUser = mongoose.model("User", TempUserSchema);
 
- export default User
+ export default TempUser
