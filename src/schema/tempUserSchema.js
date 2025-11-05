@@ -83,6 +83,6 @@ TempUserSchema.pre("save", async function (next) {
   }
 });
 
- const TempUser = mongoose.model("User", TempUserSchema);
+ const TempUser = mongoose.model("TempUser", TempUserSchema);
 
  export default TempUser

@@ -1,51 +1,77 @@
-import { createUser, findUser, updateUser } from "../repository/userRepository.js";
+// import { createTempUser, findTempUser, deleteTempUser } from "../repository/tempUserRepository.js";
+import { createUser, findUser } from "../repository/userRepository.js";
 import generateOtp from "../utils/generateOtp.js";
 import emailTemplate from "../utils/emailTemplates.js";
 import emailTransporter from "../config/emailConfig.js";
 import config from "../config/serverConfig.js";
+import { createTempUser, deleteTempUser, findTempUser } from "../repository/tempUserRepository.js";
+import { withErrorHandling } from "../utils/errors/errorHandler.js";
+
 const { EMAIL_USER } = config;
 
-export const registerUser = async (data) => {
-  const existing = await findUser({ email: data.email });
-  if (existing) throw new Error("User already exists!");
+export const registerUser = withErrorHandling( async (data) => {
 
-  const otp = generateOtp();
-  const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
-
-  const user = await createUser({
-    ...data,
-    isVerified: false,
-    otp,
-    otpExpires: otpExpiry
-  });
-
-  await emailTransporter.sendMail({
-    from: `"Auth System" <${EMAIL_USER}>`,
-    to: user.email,
-    subject: "Verify your Email",
-    html: emailTemplate({
-      name: user.fullName,
-      heading: "Verify Your Email",
-      message: "Please use the provided OTP within the Alchemy Food World website itself to complete your registration.",
-      otp: otp,
-      footer: "Do not share this OTP with anyone."
-    })
-  });
-
-  return { message: "OTP sent to email", userId: user._id };
-};
-
-export const verifyOtp = async (email, otp) => {
-  const user = await findUser({ email });
-  if (!user) throw new Error("User not found!");
-
-  if (user.otp !== otp || user.otpExpires < Date.now()) {
-    throw new Error("Invalid or expired OTP!");
+  const existingUser = await findUser({ email: data.email });
+  if (existingUser) {
+    throw new Error("User already registered and verified");
   }
 
-  return await updateUser(user._id, {
-    isVerified: true,
-    otp: null,
-    otpExpires: null
+  const existingTemp = await findTempUser({ email: data.email });
+  if (existingTemp) {
+    throw new Error("OTP already sent! Please verify your email.");
+  }
+
+  const otp = generateOtp();
+  const otpExpiry = new Date(Date.now() + 2 * 60 * 1000); // 2 min
+
+  const tempUser = await createTempUser({
+    ...data,
+    otp,
+    otpExpires: otpExpiry,
+    isVerified: false,
   });
-};
+
+  // Send OTP email
+  await emailTransporter.sendMail({
+    from: `"Auth System" <${EMAIL_USER}>`,
+    to: tempUser.email,
+    subject: "Email Verification",
+    html: emailTemplate({
+      name: tempUser.fullName,
+      heading: "Verify Your Email",
+      message: "Use this OTP to verify your account.",
+      otp,
+      footer: "This OTP expires in 2 minutes.",
+    }),
+  });
+
+  return { message: "OTP sent to your email", email: tempUser.email };
+});
+
+export const verifyOtp = withErrorHandling( async (email, otp) => {
+  const tempUser = await findTempUser({ email });
+  if (!tempUser) throw new Error("No OTP request found for this email");
+
+  if (tempUser.otp !== otp || tempUser.otpExpires < Date.now()) {
+    throw new Error("Invalid or expired OTP");
+  }
+
+  const realUser = await createUser({
+    fullName: tempUser.fullName,
+    userName: tempUser.userName,
+    email: tempUser.email,
+    password: tempUser.password,
+    profilePicture: tempUser.profilePicture,
+    role: tempUser.role,
+    mobileNumber: tempUser.mobileNumber,
+    displayName: tempUser.displayName,
+    isVerified: true,
+  });
+
+  await deleteTempUser(tempUser._id);
+
+  return {
+    message: "Email verified & Account created successfully",
+    user: realUser,
+  };
+});

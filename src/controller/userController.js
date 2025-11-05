@@ -1,20 +1,24 @@
+import { StatusCodes } from "http-status-codes";
 import { registerUser, verifyOtp } from "../service/userService.js";
+import { errorResponce, successResponce } from "../utils/responses.js";
 
 export const createUserController = async (req, res) => {
   try {
     const response = await registerUser(req.body);
-    res.status(201).json({ success: true, ...response });
+    return successResponce(res, response, StatusCodes.CREATED, "User registered successfully")
   } catch (error) {
-    res.status(400).json({ success: false, message: error.message });
+   return errorResponce(res, error); 
   }
+
+
 };
 
 export const verifyOtpController = async (req, res) => {
   try {
     const { email, otp } = req.body;
     const user = await verifyOtp(email, otp);
-    res.json({ success: true, message: "Email verified", user });
+    return successResponce(res, user, StatusCodes.OK, "OTP verified successfully");
   } catch (err) {
-    res.status(400).json({ success: false, message: err.message });
+    return errorResponce(res, err);
   }
 };
