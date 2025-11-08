@@ -1,4 +1,4 @@
-import logger from '../helpers/logger.js';
+import logger from '../logger.js';
 import BadRequestError from './badRequestError.js';
 import InternalServerError from './internalServerError.js';
 
@@ -27,7 +27,7 @@ export default function handleCommonErrors(error) {
     throw new BadRequestError('Duplicate key error');
   }
 
-  // Log unexpected errors
+  // Log unexpected errorss
   logger.error('Unhandled error:', {
     message: error.message,
     stack: error.stack,

@@ -1,5 +1,3 @@
-// utils/emailTemplates.js
-
 const emailTemplate = ({ name, heading, message, otp, link, footer }) => {
   return `
     <div style="font-family: Arial, sans-serif; padding: 20px;">

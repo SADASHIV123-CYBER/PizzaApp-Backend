@@ -1,6 +1,5 @@
 import NotFoundError from "./notFoundError.js";
 import handleCommonErrors from "./handleCommonErrors.js";
-import logger from "../helpers/logger.js";
 
 export function withErrorHandling(handler) {
   return async (...args) => {
@@ -13,7 +12,6 @@ export function withErrorHandling(handler) {
         throw error;
       }
       
-      logger.error(error);
       handleCommonErrors(error);
     }
   };

@@ -1,20 +1,21 @@
 // import { createTempUser, findTempUser, deleteTempUser } from "../repository/tempUserRepository.js";
-import { createUser, findUser } from "../repository/userRepository.js";
 import generateOtp from "../utils/generateOtp.js";
 import emailTemplate from "../utils/emailTemplates.js";
 import emailTransporter from "../config/emailConfig.js";
 import config from "../config/serverConfig.js";
 import { createTempUser, deleteTempUser, findTempUser } from "../repository/tempUserRepository.js";
 import { withErrorHandling } from "../utils/errors/errorHandler.js";
+import User from "../schema/userSchema.js";
+import { createUser, findUser } from "../repository/userRepository.js";
 
 const { EMAIL_USER } = config;
 
 export const registerUser = withErrorHandling( async (data) => {
 
-  const existingUser = await findUser({ email: data.email });
-  if (existingUser) {
-    throw new Error("User already registered and verified");
-  }
+  // const existingUser = await findUser({ email: data.email });
+  // if (existingUser) {
+  //   throw new Error("User already registered and verified");
+  // }
 
   const existingTemp = await findTempUser({ email: data.email });
   if (existingTemp) {

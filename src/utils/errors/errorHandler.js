@@ -2,7 +2,7 @@ import NotFoundError from "./notFoundError.js";
 import BadRequestError from "./badRequestError.js";
 import UnauthorisedError from "./unauthorisedError.js";
 import handleCommonErrors from "./handleCommonErrors.js";
-import logger from "../helpers/logger.js";
+import logger from "../logger.js";
 
 export function withErrorHandling(handler) {
   return async (...args) => {
