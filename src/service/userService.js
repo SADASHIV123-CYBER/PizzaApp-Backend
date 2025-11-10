@@ -76,3 +76,41 @@ export const verifyOtp = withErrorHandling( async (email, otp) => {
     user: realUser,
   };
 });
+
+export const resendOtp = async (email) => {
+  const existingTemp = await findTempUser({ email });
+  if (!existingTemp) throw new Error("No OTP found for this email. Please register again.");
+
+  // Check if OTP already valid
+  if (existingTemp.otpExpires > Date.now()) {
+    throw new Error("OTP still valid, please check your email.");
+  }
+
+  // Delete old OTP and create new one
+  await deleteTempUser(existingTemp._id);
+
+  const newOtp = generateOtp();
+  const otpExpiry = new Date(Date.now() + 2 * 60 * 1000); // 2 min
+
+  const tempUser = await createTempUser({
+    ...existingTemp.toObject(),
+    otp: newOtp,
+    otpExpires: otpExpiry,
+    isVerified: false,
+  });
+
+  await emailTransporter.sendMail({
+    from: `"Auth System" <${EMAIL_USER}>`,
+    to: tempUser.email,
+    subject: "New OTP for Email Verification",
+    html: emailTemplate({
+      name: tempUser.fullName,
+      heading: "Resend OTP",
+      message: "Use this new OTP to verify your email.",
+      otp: newOtp,
+      footer: "This OTP expires in 2 minutes.",
+    }),
+  });
+
+  return { message: "New OTP sent successfully" };
+};

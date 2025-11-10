@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { registerUser, verifyOtp } from "../service/userService.js";
+import { registerUser, resendOtp, verifyOtp } from "../service/userService.js";
 import { errorResponce, successResponce } from "../utils/responses.js";
 
 export const createUserController = async (req, res) => {
@@ -22,3 +22,12 @@ export const verifyOtpController = async (req, res) => {
     return errorResponce(res, err);
   }
 };
+
+export const resendOtpController = async (req, res) => {
+  try {
+    const response = await resendOtp(req.body.email);
+    return successResponce(res, response, StatusCodes.OK, "OTP resent successfully");
+  } catch (error) {
+    return errorResponce(res, error);
+  }
+}

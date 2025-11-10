@@ -15,3 +15,8 @@ export const deleteTempUser = async(id) => {
     return tempUser
 }
 
+export const deleteExpiredTempUsers = async() => {
+    const result = await TempUser.deleteMany({ expiresAt: { $lt: new Date() }});
+    return result.deletedCount;
+}
+
