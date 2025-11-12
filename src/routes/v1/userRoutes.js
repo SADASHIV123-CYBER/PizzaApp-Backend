@@ -1,10 +1,10 @@
 import express from "express";
 import { createUserController, resendOtpController, verifyOtpController } from "../../controller/userController.js";
 
-const router = express.Router();
+const userRouter = express.Router();
 
-router.post("/register", createUserController);
-router.post("/verify-otp", verifyOtpController);
-router.post("/resend-otp", resendOtpController);
+userRouter.post("/register", createUserController);
+userRouter.post("/verify-otp", verifyOtpController);
+userRouter.post("/resend-otp", resendOtpController);
 
-export default router;
+export default userRouter;

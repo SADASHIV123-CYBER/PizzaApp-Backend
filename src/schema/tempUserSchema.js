@@ -69,19 +69,19 @@ const TempUserSchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
-TempUserSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) {
-    return next();
-  }
+// TempUserSchema.pre("save", async function (next) {
+//   if (!this.isModified("password")) {
+//     return next();
+//   }
 
-  try {
-    const hashedPassword = await bcrypt.hash(this.password, 10);
-    this.password = hashedPassword;
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
+//   try {
+//     const hashedPassword = await bcrypt.hash(this.password, 10);
+//     this.password = hashedPassword;
+//     next();
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
  const TempUser = mongoose.model("TempUser", TempUserSchema);
 

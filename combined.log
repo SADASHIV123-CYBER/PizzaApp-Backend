@@ -777,3 +777,144 @@
   level: 'error',
   timestamp: '2025-11-10T16:52:19.756Z'
 }
+{ level: 'error', timestamp: '2025-11-11T17:35:04.632Z' }
+{
+  message: 'Unhandled error: No OTP request found for this email',
+  stack: 'Error: No OTP request found for this email\n' +
+    '    at file:///C:/Users/shiv/developer/PizzaApp-Backend/src/service/userService.js:54:24\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async file:///C:/Users/shiv/developer/PizzaApp-Backend/src/utils/errors/errorHandler.js:10:14\n' +
+    '    at async verifyOtpController (file:///C:/Users/shiv/developer/PizzaApp-Backend/src/controller/userController.js:19:18)',
+  type: 'Error',
+  level: 'error',
+  timestamp: '2025-11-11T17:35:04.637Z'
+}
+{ level: 'error', timestamp: '2025-11-11T17:35:07.164Z' }
+{
+  message: 'Unhandled error: No OTP request found for this email',
+  stack: 'Error: No OTP request found for this email\n' +
+    '    at file:///C:/Users/shiv/developer/PizzaApp-Backend/src/service/userService.js:54:24\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async file:///C:/Users/shiv/developer/PizzaApp-Backend/src/utils/errors/errorHandler.js:10:14\n' +
+    '    at async verifyOtpController (file:///C:/Users/shiv/developer/PizzaApp-Backend/src/controller/userController.js:19:18)',
+  type: 'Error',
+  level: 'error',
+  timestamp: '2025-11-11T17:35:07.166Z'
+}
+{ level: 'error', timestamp: '2025-11-11T17:35:34.985Z' }
+{
+  message: 'Unhandled error: Invalid or expired OTP',
+  stack: 'Error: Invalid or expired OTP\n' +
+    '    at file:///C:/Users/shiv/developer/PizzaApp-Backend/src/service/userService.js:57:11\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async file:///C:/Users/shiv/developer/PizzaApp-Backend/src/utils/errors/errorHandler.js:10:14\n' +
+    '    at async verifyOtpController (file:///C:/Users/shiv/developer/PizzaApp-Backend/src/controller/userController.js:19:18)',
+  type: 'Error',
+  level: 'error',
+  timestamp: '2025-11-11T17:35:34.986Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:40:46.586Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:41:27.951Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:42:10.349Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:42:11.946Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:44:22.262Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:45:47.295Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:46:28.283Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:46:30.657Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:48:02.965Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:48:05.858Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:49:25.806Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:51:21.841Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-11T17:51:23.493Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-12T02:06:55.726Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-12T02:08:54.095Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-12T02:14:47.062Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-12T02:16:29.570Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-12T02:18:27.191Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-12T02:18:57.415Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-12T02:19:17.002Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-11-12T02:24:36.233Z'
+}
