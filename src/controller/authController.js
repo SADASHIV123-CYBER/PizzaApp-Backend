@@ -31,7 +31,6 @@ const cookieOptions = {
 
     logger.info('Setting auth cookie with options:', cookieOptions);
 
-    // ✅ Set the auth cookie
     res.cookie('authToken', token, cookieOptions);
 
     return successResponce(res, null, StatusCodes.OK, `User logged in successfully: ${loginPayload.email}`);

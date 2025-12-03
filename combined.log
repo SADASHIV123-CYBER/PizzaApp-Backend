@@ -918,3 +918,184 @@
   level: 'error',
   timestamp: '2025-11-12T02:24:36.233Z'
 }
+{
+  message: 'User logged in successfully: shivkalee12345@gmail.com',
+  level: 'info',
+  timestamp: '2025-11-12T02:26:47.042Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-11-12T02:26:47.046Z'
+}
+{
+  errno: -4039,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '172.253.118.108',
+  port: 465,
+  command: 'CONN',
+  level: 'error',
+  timestamp: '2025-12-03T07:49:31.521Z'
+}
+{
+  message: 'Unhandled error: connect ETIMEDOUT 172.253.118.108:465',
+  stack: 'Error: connect ETIMEDOUT 172.253.118.108:465\n' +
+    '    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)',
+  type: 'Error',
+  level: 'error',
+  timestamp: '2025-12-03T07:49:31.527Z'
+}
+{ level: 'error', timestamp: '2025-12-03T07:50:59.647Z' }
+{
+  message: 'Unhandled error: OTP already sent! Please verify your email.',
+  stack: 'Error: OTP already sent! Please verify your email.\n' +
+    '    at file:///C:/Users/shiv/developer/PizzaApp-Backend/src/service/userService.js:22:11\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async file:///C:/Users/shiv/developer/PizzaApp-Backend/src/utils/errors/errorHandler.js:10:14\n' +
+    '    at async createUserController (file:///C:/Users/shiv/developer/PizzaApp-Backend/src/controller/userController.js:7:22)',
+  type: 'Error',
+  level: 'error',
+  timestamp: '2025-12-03T07:50:59.649Z'
+}
+{ level: 'error', timestamp: '2025-12-03T07:51:24.817Z' }
+{
+  message: 'Unhandled error: OTP already sent! Please verify your email.',
+  stack: 'Error: OTP already sent! Please verify your email.\n' +
+    '    at file:///C:/Users/shiv/developer/PizzaApp-Backend/src/service/userService.js:22:11\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async file:///C:/Users/shiv/developer/PizzaApp-Backend/src/utils/errors/errorHandler.js:10:14\n' +
+    '    at async createUserController (file:///C:/Users/shiv/developer/PizzaApp-Backend/src/controller/userController.js:7:22)',
+  type: 'Error',
+  level: 'error',
+  timestamp: '2025-12-03T07:51:24.823Z'
+}
+{ level: 'error', timestamp: '2025-12-03T07:53:09.774Z' }
+{
+  message: 'Unhandled error: OTP already sent! Please verify your email.',
+  stack: 'Error: OTP already sent! Please verify your email.\n' +
+    '    at file:///C:/Users/shiv/developer/PizzaApp-Backend/src/service/userService.js:22:11\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async file:///C:/Users/shiv/developer/PizzaApp-Backend/src/utils/errors/errorHandler.js:10:14\n' +
+    '    at async createUserController (file:///C:/Users/shiv/developer/PizzaApp-Backend/src/controller/userController.js:7:22)',
+  type: 'Error',
+  level: 'error',
+  timestamp: '2025-12-03T07:53:09.776Z'
+}
+{ level: 'error', timestamp: '2025-12-03T07:54:51.376Z' }
+{
+  message: 'Unhandled error: OTP already sent! Please verify your email.',
+  stack: 'Error: OTP already sent! Please verify your email.\n' +
+    '    at file:///C:/Users/shiv/developer/PizzaApp-Backend/src/service/userService.js:22:11\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async file:///C:/Users/shiv/developer/PizzaApp-Backend/src/utils/errors/errorHandler.js:10:14\n' +
+    '    at async createUserController (file:///C:/Users/shiv/developer/PizzaApp-Backend/src/controller/userController.js:7:22)',
+  type: 'Error',
+  level: 'error',
+  timestamp: '2025-12-03T07:54:51.382Z'
+}
+{
+  errorLabelSet: Set(0) {},
+  errorResponse: {
+    index: 0,
+    code: 11000,
+    errmsg: 'E11000 duplicate key error collection: test.tempusers index: mobileNumber_1 dup key: { mobileNumber: "9322852954" }',
+    keyPattern: { mobileNumber: 1 },
+    keyValue: { mobileNumber: '9322852954' }
+  },
+  index: 0,
+  code: 11000,
+  keyPattern: { mobileNumber: 1 },
+  keyValue: { mobileNumber: '9322852954' },
+  level: 'error',
+  timestamp: '2025-12-03T07:55:34.118Z'
+}
+{
+  errorLabelSet: Set(0) {},
+  errorResponse: {
+    index: 0,
+    code: 11000,
+    errmsg: 'E11000 duplicate key error collection: test.tempusers index: mobileNumber_1 dup key: { mobileNumber: "9322852954" }',
+    keyPattern: { mobileNumber: 1 },
+    keyValue: { mobileNumber: '9322852954' }
+  },
+  index: 0,
+  code: 11000,
+  keyPattern: { mobileNumber: 1 },
+  keyValue: { mobileNumber: '9322852954' },
+  level: 'error',
+  timestamp: '2025-12-03T07:55:50.632Z'
+}
+{
+  errorLabelSet: Set(0) {},
+  errorResponse: {
+    index: 0,
+    code: 11000,
+    errmsg: 'E11000 duplicate key error collection: test.tempusers index: mobileNumber_1 dup key: { mobileNumber: "9322852954" }',
+    keyPattern: { mobileNumber: 1 },
+    keyValue: { mobileNumber: '9322852954' }
+  },
+  index: 0,
+  code: 11000,
+  keyPattern: { mobileNumber: 1 },
+  keyValue: { mobileNumber: '9322852954' },
+  level: 'error',
+  timestamp: '2025-12-03T07:56:21.076Z'
+}
+{ level: 'error', timestamp: '2025-12-03T07:57:02.437Z' }
+{
+  message: 'Unhandled error: No OTP request found for this email',
+  stack: 'Error: No OTP request found for this email\n' +
+    '    at file:///C:/Users/shiv/developer/PizzaApp-Backend/src/service/userService.js:54:24\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at async file:///C:/Users/shiv/developer/PizzaApp-Backend/src/utils/errors/errorHandler.js:10:14\n' +
+    '    at async verifyOtpController (file:///C:/Users/shiv/developer/PizzaApp-Backend/src/controller/userController.js:19:18)',
+  type: 'Error',
+  level: 'error',
+  timestamp: '2025-12-03T07:57:02.440Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-03T08:08:16.412Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-03T08:08:16.415Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-12-03T18:23:45.724Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-12-03T18:23:48.005Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-03T18:23:56.186Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-03T18:23:56.189Z'
+}
