@@ -12,6 +12,7 @@ export const passwordRepository = {
                 otpHash,
                 otpExpiresAt: expiry,
                 otpAttempts: 0, 
+                isOtpVerified: false,
                 otpSentAt: Date.now()
             },
 
@@ -39,12 +40,26 @@ export const passwordRepository = {
         )
     },
 
+    markOtpVerifyed: async(userId) => {
+        return await User.findByIdAndUpdate(userId, {
+            isOtpVerified: true,
+            otpHash: null,
+            otpExpiresAt: null,
+            otpAttempts: 0
+        })
+    },
+
+    clearOtpVerification: async(userId) => {
+        return await User.findByIdAndUpdate(userId, {isOtpVerified: false})
+    },
+
     updatePassword: async(email, newHashedPassword) => {
         return await User.findOneAndUpdate(
             {email},
             {password: newHashedPassword},
             {new: true}
         )
-    }
+    },
+
 }
 

@@ -77,6 +77,10 @@ export const passwordService = {
             throw new NotFoundError("user")
         }
 
+        if(!user.isOtpVerified) {
+            throw new InvalidOTP("OTP not verified. Please verify OTP first.")
+        }
+
         const hashedPass = await bcrypt.hash(newPassword,   10);
 
         await passwordRepository.updatePassword(email, hashedPass);
