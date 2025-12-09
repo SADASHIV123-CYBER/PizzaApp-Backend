@@ -2,7 +2,7 @@ import AppError from "./appError.js";
 
 class OtpExpiredOrMissing extends AppError {
     constructor(resource) {
-        super(`OTP`,400)
+        super(`OTP expired or missing`,400)
     }
 }
 

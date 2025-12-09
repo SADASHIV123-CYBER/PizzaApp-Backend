@@ -1099,3 +1099,158 @@
   message: 'Setting auth cookie with options:',
   timestamp: '2025-12-03T18:23:56.189Z'
 }
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T08:43:54.763Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T08:43:54.766Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T08:44:04.836Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T08:44:04.837Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T08:50:25.194Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T08:50:25.195Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T08:54:56.826Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T08:54:56.829Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T08:55:00.788Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T08:55:00.789Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T08:57:30.286Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T08:57:30.291Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T08:57:43.303Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T08:57:43.304Z'
+}
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-12-04T08:57:52.669Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T08:57:55.668Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T08:57:55.669Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T08:58:58.735Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T08:58:58.736Z'
+}
+{
+  message: 'User logged in successfully: sadashivkale604@gmail.com',
+  level: 'info',
+  timestamp: '2025-12-04T09:12:44.728Z'
+}
+{
+  httpOnly: true,
+  secure: 'PRODUCTION',
+  sameSite: 'None',
+  maxAge: 86400000,
+  path: '/',
+  level: 'info',
+  message: 'Setting auth cookie with options:',
+  timestamp: '2025-12-04T09:12:44.733Z'
+}

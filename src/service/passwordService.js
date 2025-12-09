@@ -8,7 +8,7 @@ import generateOtp from "../utils/generateOtp.js";
 import hashedOtp from "../utils/hashedOtp.js";
 import bcrypt from 'bcrypt'
 
-const OTP_EXPIRY = 10 * 60 * 1000;
+const OTP_EXPIRY = 2 * 60 * 1000;
 const RESEND_INTERVAL = 60 * 1000;
 const MAX_ATTEMPTS = 5;
 
@@ -66,7 +66,7 @@ export const passwordService = {
             throw new InvalidOTP();
         }
 
-        await passwordRepository.clearOtp(user._id);
+        await passwordRepository.markOtpVerifyed(user._id);
 
         return {message: "OTP verified"};
     },
@@ -81,9 +81,15 @@ export const passwordService = {
             throw new InvalidOTP("OTP not verified. Please verify OTP first.")
         }
 
+        if(user.otpUsed) {
+            throw new OtpExpiredOrMissing()
+        }
+
         const hashedPass = await bcrypt.hash(newPassword,   10);
 
         await passwordRepository.updatePassword(email, hashedPass);
+
+        await passwordRepository.markOtpUsed(user._id)
 
         return {message: "Password updated successfully"}
     }

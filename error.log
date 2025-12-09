@@ -1054,3 +1054,8 @@
   level: 'error',
   timestamp: '2025-12-03T18:23:48.005Z'
 }
+{
+  statusCode: 400,
+  level: 'error',
+  timestamp: '2025-12-04T08:57:52.669Z'
+}

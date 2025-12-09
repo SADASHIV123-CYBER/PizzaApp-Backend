@@ -1,6 +1,43 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
+
+const refreshTokenSchema = new mongoose.Schema({
+  tri: {
+    type: String,
+    required: true
+  },
+
+  token: {
+    type: String,
+    required: true
+  },
+
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
+
+  expiresAt: {
+    type: Date,
+    required: true
+  },
+  deviceInfo: {
+    type: String,
+    default: null
+  },
+  
+  revoked: {
+    type: Boolean,
+    default: false
+  },
+
+  replaceBy: {
+    type: String,
+    default: null
+  }
+}, {_id: false})
+
 const userSchema = new mongoose.Schema({
   fullName: {
     type: String,
@@ -54,6 +91,11 @@ const userSchema = new mongoose.Schema({
     sparse: true,
     trim: true,
     match: [/^[6-9]\d{9}$/, "Please provide a valid 10-digit Indian mobile number"],
+  },
+
+  refreshTokens: {
+    type: [refreshTokenSchema], 
+    default: []
   },
 
   displayName: {
